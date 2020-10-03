@@ -1,0 +1,86 @@
+Title: Our House
+background: var(--background)
+
+# -----------------
+# --- Templates ---
+# -----------------
+
+button_card_templates:
+  switch_slider:
+    styles:
+      card:
+        - background-color: var(--secondary-background-color)
+        - box-shadow: none;
+        - overflow: unset
+      name:
+        - color: white
+      label:
+        - color: yellow
+      custom_fields:
+        slider:
+          - filter: opacity(80%)
+          - overflow: unset
+          - color: var(--primary-color)
+      grid:
+        - grid-template-areas: '"n" "i" "l" "slider"'
+        - grid-template-columns: 1fr
+        - grid-template-rows: min-content fr min-content min-content
+    size: 40%
+    state:
+    - value: "off"
+      styles:
+        icon:
+          - color: white
+    - value: "on"
+      styles:
+        icon:
+          - color: yellow
+    - value: "unavailable"
+      styles:
+        icon:
+          - color: red
+
+  template_switch_slider:
+    template: switch_slider
+
+  switch_no_slider:
+    styles:
+      card:
+        - background-color: var(--secondary-background-color)
+        - box-shadow: none;
+        - overflow: unset
+      name:
+        - color: white
+      label:
+        - color: yellow
+      grid:
+        - grid-template-areas: '"n" "i" "l"'
+        - grid-template-columns: 1fr
+        - grid-template-rows: min-content fr min-content min-content
+    size: 40%
+    state:
+    - value: "off"
+      styles:
+        icon:
+          - color: white
+    - value: "on"
+      styles:
+        icon:
+          - color: yellow
+    - value: "unavailable"
+      styles:
+        icon:
+          - color: red
+
+  template_switch_no_slider:
+    template: switch_no_slider
+
+# -------------------------------
+# --- Individual views (tabs) ---
+# -------------------------------
+
+views:
+  - !include lovelace/00_overview.yaml
+  - !include lovelace/10_lights.yaml
+  - !include lovelace/80_system.yaml
+  - !include lovelace/99_experiments.yaml

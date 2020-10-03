@@ -1,0 +1,501 @@
+title: Lights
+cards:
+
+  # -------------------
+  # --- Living room ---
+  # -------------------
+
+  - type: vertical-stack
+    cards:
+
+      - type: custom:button-card
+        color_type: label-card
+        color: var(--secondary-background-color)
+        name: Living Room
+
+      - type: horizontal-stack
+        cards:
+
+          - type: custom:button-card
+            template: template_switch_slider
+            custom_fields:
+              slider:
+                card:
+                  full_row: true
+                  hide_state: true
+                  type: custom:slider-entity-row
+                  entity: light.living
+            entity: light.living
+            name: Living
+            icon: mdi:ceiling-light
+            hold_action:
+              action: more-info
+
+          - type: custom:button-card
+            template: template_switch_slider
+            custom_fields:
+              slider:
+                card:
+                  full_row: true
+                  hide_state: true
+                  type: custom:slider-entity-row
+                  entity: light.tv_1
+            entity: light.tv_1
+            name: TV1
+            icon: mdi:television
+            hold_action:
+              action: more-info
+
+          - type: custom:button-card
+            template: template_switch_slider
+            custom_fields:
+              slider:
+                card:
+                  full_row: true
+                  hide_state: true
+                  type: custom:slider-entity-row
+                  entity: light.tv_2
+            entity: light.tv_2
+            name: TV2
+            icon: mdi:television
+            hold_action:
+              action: more-info
+
+          - type: custom:button-card
+            template: template_switch_no_slider
+            entity: switch.arc_a3
+            name: Couch
+            icon: mdi:sofa
+            hold_action:
+              action: more-info
+
+      - type: horizontal-stack
+        cards:
+
+          - type: custom:button-card
+            template: template_switch_slider
+            custom_fields:
+              slider:
+                card:
+                  full_row: true
+                  hide_state: true
+                  type: custom:slider-entity-row
+                  entity: light.hue_beyond_down_1
+            entity: light.hue_beyond_down_1
+            name: Table Down
+            icon: mdi:ceiling-light
+            hold_action:
+              action: more-info
+
+          - type: custom:button-card
+            template: template_switch_slider
+            custom_fields:
+              slider:
+                card:
+                  full_row: true
+                  hide_state: true
+                  type: custom:slider-entity-row
+                  entity: light.hue_beyond_up_1
+            entity: light.hue_beyond_up_1
+            name: Table Up
+            icon: mdi:ceiling-light
+            hold_action:
+              action: more-info
+
+          - type: custom:button-card
+            template: template_switch_slider
+            custom_fields:
+              slider:
+                card:
+                  full_row: true
+                  hide_state: true
+                  type: custom:slider-entity-row
+                  entity: light.kitchen
+            entity: light.kitchen
+            name: Kitchen
+            icon: mdi:ceiling-light
+            hold_action:
+              action: more-info
+
+          - type: custom:button-card
+            template: template_switch_no_slider
+            entity: switch.ac_0fe17ea_2
+            name: Stairs
+            icon: mdi:stairs
+            hold_action:
+              action: more-info
+
+
+  # ----------------------
+  # --- Master bedroom ---
+  # ----------------------
+
+  - type: vertical-stack
+    cards:
+
+      - type: custom:button-card
+        color_type: label-card
+        color: var(--secondary-background-color)
+        name: Master Bedroom
+
+      - type: horizontal-stack
+        cards:
+
+          - type: custom:button-card
+            template: template_switch_slider
+            custom_fields:
+              slider:
+                card:
+                  full_row: true
+                  hide_state: true
+                  type: custom:slider-entity-row
+                  entity: light.agnes_bed
+            entity: light.agnes_bed
+            name: Agnes
+            icon: mdi:bed
+            hold_action:
+              action: more-info
+
+          - type: custom:button-card
+            template: template_switch_slider
+            custom_fields:
+              slider:
+                card:
+                  full_row: true
+                  hide_state: true
+                  type: custom:slider-entity-row
+                  entity: light.peter_bed
+            entity: light.peter_bed
+            name: Peter
+            icon: mdi:bed
+            hold_action:
+              action: more-info
+
+          - type: custom:button-card
+            template: template_switch_slider
+            custom_fields:
+              slider:
+                card:
+                  full_row: true
+                  hide_state: true
+                  type: custom:slider-entity-row
+                  entity: light.master_ceiling
+            entity: light.master_ceiling
+            name: Ceiling
+            icon: mdi:ceiling-light
+            hold_action:
+              action: more-info
+
+          - type: custom:button-card
+            template: template_switch_no_slider
+            entity: switch.ac_0fe17ea_4
+            name: Wardrobe
+            icon: mdi:hanger
+            hold_action:
+              action: more-info
+
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        color_type: label-card
+        color: var(--secondary-background-color)
+        name: Study
+
+      - type: horizontal-stack
+        name: Study
+        cards:
+          - type: custom:button-card
+            template: template_switch_slider
+            custom_fields:
+              slider:
+                card:
+                  full_row: true
+                  hide_state: true
+                  type: custom:slider-entity-row
+                  entity: light.ceiling_study
+            entity: light.ceiling_study
+            name: Ceiling
+            icon: mdi:ceiling-light
+            hold_action:
+              action: more-info
+
+          - type: custom:button-card
+            template: template_switch_slider
+            custom_fields:
+              slider:
+                card:
+                  full_row: true
+                  hide_state: true
+                  type: custom:slider-entity-row
+                  entity: light.desk_light
+            entity: light.desk_light
+            name: Desk
+            icon: mdi:desk-lamp
+            hold_action:
+              action: more-info
+
+          - type: "custom:button-card"
+            color_type: blank-card
+
+          - type: "custom:button-card"
+            color_type: blank-card
+
+  # -----------------------
+  # --- Isabelle's room ---
+  # -----------------------
+
+  - type: vertical-stack
+    cards:
+
+      - type: custom:button-card
+        color_type: label-card
+        color: var(--secondary-background-color)
+        name: Isabelle's room
+
+      - type: horizontal-stack
+        cards:
+
+          - type: custom:button-card
+            template: template_switch_slider
+            custom_fields:
+              slider:
+                card:
+                  full_row: true
+                  hide_state: true
+                  type: custom:slider-entity-row
+                  entity: light.ceiling_isabelle
+            entity: light.ceiling_isabelle
+            name: Ceiling
+            icon: mdi:ceiling-light
+            hold_action:
+              action: more-info
+
+          - type: custom:button-card
+            template: template_switch_slider
+            custom_fields:
+              slider:
+                card:
+                  full_row: true
+                  hide_state: true
+                  type: custom:slider-entity-row
+                  entity: light.isabelle_s_bedlight
+            entity: light.isabelle_s_bedlight
+            name: Bed
+            icon: mdi:bed
+            hold_action:
+              action: more-info
+
+          - type: custom:button-card
+            template: template_switch_slider
+            custom_fields:
+              slider:
+                card:
+                  full_row: true
+                  hide_state: true
+                  type: custom:slider-entity-row
+                  entity: light.isabelle_s_cupboard
+            entity: light.isabelle_s_cupboard
+            name: Cupboard
+            icon: mdi:wardrobe
+            hold_action:
+              action: more-info
+
+          - type: "custom:button-card"
+            color_type: blank-card
+
+  # -----------------------
+  # --- Christine's room ---
+  # -----------------------
+
+  - type: vertical-stack
+    cards:
+
+      - type: custom:button-card
+        color_type: label-card
+        color: var(--secondary-background-color)
+        name: Christine's room
+
+      - type: horizontal-stack
+        cards:
+
+          - type: custom:button-card
+            template: template_switch_slider
+            custom_fields:
+              slider:
+                card:
+                  full_row: true
+                  hide_state: true
+                  type: custom:slider-entity-row
+                  entity: light.ceiling_chrissy
+            entity: light.ceiling_chrissy
+            name: Ceiling
+            icon: mdi:ceiling-light
+            hold_action:
+              action: more-info
+
+          - type: custom:button-card
+            template: template_switch_slider
+            custom_fields:
+              slider:
+                card:
+                  full_row: true
+                  hide_state: true
+                  type: custom:slider-entity-row
+                  entity: light.bedlight_chrissy
+            entity: light.bedlight_chrissy
+            name: Bed
+            icon: mdi:bed
+            hold_action:
+              action: more-info
+
+          - type: custom:button-card
+            template: template_switch_slider
+            custom_fields:
+              slider:
+                card:
+                  full_row: true
+                  hide_state: true
+                  type: custom:slider-entity-row
+                  entity: light.chrissy_bureau
+            entity: light.chrissy_bureau
+            name: Desk
+            icon: mdi:desk
+            hold_action:
+              action: more-info
+
+          - type: "custom:button-card"
+            color_type: blank-card
+
+      - type: horizontal-stack
+        cards:
+
+          - type: custom:button-card
+            template: template_switch_slider
+            custom_fields:
+              slider:
+                card:
+                  full_row: true
+                  hide_state: true
+                  type: custom:slider-entity-row
+                  entity: light.chrissy1
+            entity: light.chrissy1
+            name: Floor
+            icon: mdi:floor-lamp-dual
+            hold_action:
+              action: more-info
+
+          - type: custom:button-card
+            template: template_switch_slider
+            custom_fields:
+              slider:
+                card:
+                  full_row: true
+                  hide_state: true
+                  type: custom:slider-entity-row
+                  entity: light.chrissy2
+            entity: light.chrissy2
+            name: Floor
+            icon: mdi:floor-lamp-dual
+            hold_action:
+              action: more-info
+
+          - type: "custom:button-card"
+            color_type: blank-card
+
+          - type: "custom:button-card"
+            color_type: blank-card
+
+  # ---------------
+  # --- Various ---
+  # ---------------
+
+  - type: vertical-stack
+    cards:
+
+      - type: custom:button-card
+        color_type: label-card
+        color: var(--secondary-background-color)
+        name: Various
+
+      - type: horizontal-stack
+        cards:
+
+          - type: custom:button-card
+            template: template_switch_slider
+            custom_fields:
+              slider:
+                card:
+                  full_row: true
+                  hide_state: true
+                  type: custom:slider-entity-row
+                  entity: light.entrance
+            entity: light.entrance
+            name: Hallway
+            icon: mdi:ceiling-light
+            hold_action:
+              action: more-info
+
+          - type: custom:button-card
+            template: template_switch_slider
+            custom_fields:
+              slider:
+                card:
+                  full_row: true
+                  hide_state: true
+                  type: custom:slider-entity-row
+                  entity: light.corridor
+            entity: light.corridor
+            name: Landing
+            icon: mdi:ceiling-light
+            hold_action:
+              action: more-info
+
+          - type: "custom:button-card"
+            color_type: blank-card
+
+          - type: "custom:button-card"
+            color_type: blank-card
+
+  # ---------------
+  # --- Various ---
+  # ---------------
+
+  - type: vertical-stack
+    cards:
+
+      - type: custom:button-card
+        color_type: label-card
+        color: var(--secondary-background-color)
+        name: Outside
+
+      - type: horizontal-stack
+        cards:
+
+          - type: custom:button-card
+            template: template_switch_slider
+            custom_fields:
+              slider:
+                card:
+                  full_row: true
+                  hide_state: true
+                  type: custom:slider-entity-row
+                  entity: light.shed
+            entity: light.shed
+            name: Shed
+            icon: mdi:barn
+            hold_action:
+              action: more-info
+
+          - type: custom:button-card
+            template: template_switch_no_slider
+            entity: switch.ac_0fe17ea_1
+            name: Sunscreen
+            icon: mdi:weather-sunset
+            hold_action:
+              action: more-info
+
+          - type: "custom:button-card"
+            color_type: blank-card
+
+          - type: "custom:button-card"
+            color_type: blank-card

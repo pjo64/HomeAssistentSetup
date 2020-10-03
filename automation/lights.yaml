@@ -1,0 +1,26 @@
+- alias: Lights on 15 minutes before at sunset
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '-00:15:00'
+  action:
+    service: homeassistant.turn_on
+    entity_id:
+      - switch.arc_a3
+      - switch.ac_0fe17ea_2
+
+- alias: Living room lights off on button press
+  initial_state: true
+  trigger:
+    - platform: state
+      entity_id:
+        - sensor.living_room_switch
+      to: '4_click'
+  action:
+    - service: homeassistant.turn_off
+      entity_id:
+        - switch.arc_a3
+    - delay: '00:00:15'
+    - service: homeassistant.turn_off
+      entity_id:
+        - switch.ac_0fe17ea_2

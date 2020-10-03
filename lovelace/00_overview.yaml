@@ -1,0 +1,74 @@
+title: Overview
+cards:
+
+  - type: custom:mini-media-player
+    entity: media_player.soundtouch_living_room
+    icon: mdi:spotify
+    artwork: cover
+    hide:
+      volume: false
+      source: false
+      power_state: false
+
+  - type: custom:weather-card
+    entity: weather.home
+    current: true
+    details: true
+    forecast: true
+    hourly_forecast: true
+    number_of_forecasts: 5
+
+  - type: 'custom:sun-card'
+    name: Sun
+    meridiem: false
+    entities:
+      max_elevation: sun.sun
+      sunrise: sensor.sunrise
+      sunset: sensor.sunset
+      noon: sensor.solar_noon
+      moon_phase: sensor.moon
+
+  - type: vertical-stack
+    cards:
+
+    - type: horizontal-stack
+      cards:
+
+        - type: picture-glance
+          title: Peter
+          entities:
+            - device_tracker.phone_peter
+          state_image:
+            "home": /local/images/castle_color.jpeg
+            "away": /local/images/castle_bw.jpeg
+          entity: device_tracker.phone_peter
+
+        - type: picture-glance
+          title: Agnes
+          entities:
+            - device_tracker.phone_agnes
+          state_image:
+            "home": /local/images/castle_color.jpeg
+            "away": /local/images/castle_bw.jpeg
+          entity: device_tracker.phone_agnes
+
+    - type: horizontal-stack
+      cards:
+
+        - type: picture-glance
+          title: Isabelle
+          entities:
+            - device_tracker.phone_isabelle
+          state_image:
+            "home": /local/images/castle_color.jpeg
+            "away": /local/images/castle_bw.jpeg
+          entity: device_tracker.phone_isabelle
+
+        - type: picture-glance
+          title: Christine
+          entities:
+            - device_tracker.phone_christine
+          state_image:
+            "home": /local/images/castle_color.jpeg
+            "away": /local/images/castle_bw.jpeg
+          entity: device_tracker.phone_christine

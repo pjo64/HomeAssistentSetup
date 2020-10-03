@@ -1,0 +1,25 @@
+- alias: Motion in the entrance hall
+  trigger:
+    platform: state
+    entity_id: binary_sensor.philio_technology_corp_pst02_a_4_in_1_multi_sensor_motion_sensor, binary_sensor.philio_technology_corp_pst02_a_4_in_1_multi_sensor_door_window_sensor
+    to: 'on'
+  action:
+    - service: light.turn_on
+      data_template:
+        entity_id: light.entrance
+        brightness: '{{ 255 if now().hour > 4 and now().hour < 23 else  64 }}'
+        color_temp: '{{ 233 if now().hour > 4 and now().hour < 23 else  366 }}'
+    - service: timer.start
+      data:
+        entity_id: timer.entrance
+
+- alias: No more motion in the entrance hall
+  trigger:
+    platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.entrance
+  action:
+    - service: homeassistant.turn_off
+      entity_id:
+        - light.entrance

@@ -1,0 +1,144 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+rfxtrx:
+  device: /dev/serial/by-id/usb-RFXCOM_RFXtrx433_A1R14LE-if00-port0
+  automatic_add: true
+  devices:
+    0b11003100fe17ea04000070:
+
+# --------------
+# --- Timers ---
+# --------------
+
+timer:
+  entrance:
+    duration: '00:02:00'
+
+# -----------
+# --- Sun ---
+# -----------
+
+sun:
+
+# -----------------------
+# --- Bose SoundTouch ---
+# -----------------------
+
+media_player:
+  - platform: soundtouch
+    host: 192.168.178.28
+    port: 8090
+    name: Soundtouch Living Room
+
+# -----------------------
+# --- Device trackers ---
+# -----------------------
+
+device_tracker:
+  - platform: fritz
+
+# -------------------------------------
+# --- We'll make our own dashboards ---
+# -------------------------------------
+
+frontend:
+  themes: !include_dir_merge_named themes
+
+lovelace:
+  mode: yaml
+  resources:
+    - url: /hacsfiles/button-card/button-card.js
+      type: module
+    - url: /hacsfiles/lovelace-slider-entity-row/slider-entity-row.js
+      type: module
+    - url: /hacsfiles/lovelace-card-tools/card-tools.js
+      type: module      
+    - url: /hacsfiles/mini-media-player/mini-media-player-bundle.js
+      type: module
+    - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
+      type: module
+    - url: /hacsfiles/sun-card/sun-card.js
+      type: module
+    - url: /hacsfiles/bar-card/bar-card.js
+      type: module
+    - url: https://cdn.jsdelivr.net/gh/bramkragten/weather-card/dist/weather-card.min.js
+      type: module
+
+# ---------------
+# --- Sensors ---
+# ---------------
+
+sensor:
+
+  - platform: time_date
+    display_options:
+      - 'time'
+      - 'date'
+      - 'date_time'
+      - 'date_time_utc'
+      - 'date_time_iso'
+      - 'time_date'
+      - 'time_utc'
+      - 'beat'
+
+  - platform: sun2
+    monitored_conditions:
+      - solar_midnight
+      - astronomical_dawn
+      - nautical_dawn
+      - dawn
+      - sunrise
+      - solar_noon
+      - sunset
+      - dusk
+      - nautical_dusk
+      - astronomical_dusk
+      - daylight
+      - civil_daylight
+      - nautical_daylight
+      - astronomical_daylight
+      - night
+      - civil_night
+      - nautical_night
+      - astronomical_night
+      - elevation
+      - min_elevation
+      - max_elevation
+
+  - platform: moon
+
+# ----------------------
+# --- Binary Sensors ---
+# ----------------------
+
+binary_sensor:
+  - platform: sun2
+    monitored_conditions:
+      - elevation
+      - elevation: 3
+      - elevation:
+          above: -6
+          name: Above Civil Dawn
+
+# -----------------
+# --- Speedtest ---
+# -----------------
+
+speedtestdotnet:
+  scan_interval:
+    minutes: 30
+
+# ----------------
+# --- Includes ---
+# ----------------
+
+group: !include groups.yaml
+automation: !include_dir_merge_list automation
+script: !include scripts.yaml
+scene: !include scenes.yaml

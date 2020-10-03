@@ -1,0 +1,55 @@
+- name: Full power
+  entities:
+    switch.light_stairs: on
+    switch.light_couch: on
+    light.kitchen:
+      state: true
+      brightness_pct: 100
+      color_temp: 233
+    light.living:
+      state: true
+      brightness_pct: 100
+      color_temp: 233
+    light.tv_1:
+      state: true
+      brightness_pct: 100
+      color_temp: 233
+    light.tv_2:
+      state: true
+      brightness_pct: 100
+      color_temp: 233
+    light.table_down_1:
+      state: on
+      brightness_pct: 100
+      color_temp: 233
+    light.table_up_1:
+      state: on
+      brightness_pct: 100
+      color_temp: 233
+
+- name: Watching TV
+  entities:
+    light.kitchen: off
+
+- name: Peter is late
+  entities:
+    switch.light_stairs: off
+    switch.light_couch: off
+    light.kitchen: off
+    light.living: off
+    light.tv_1:
+      state: true
+      brightness_pct: 20
+      rgb_color: [255,212,50]
+    light.tv_2:
+      state: on
+      brightness_pct: 20
+      rgb_color: [255,65,156]
+    light.table_down_1:
+      state: on
+      brightness_pct: 5
+      rgb_color: [255,161,40]
+    light.table_up_1:
+      state: on
+      brightness_pct: 10
+      rgb_color: [255,71,0]

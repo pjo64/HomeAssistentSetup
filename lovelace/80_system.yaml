@@ -1,0 +1,50 @@
+title: system
+cards:
+
+- type: custom:mini-graph-card
+  entities:
+    - entity: sensor.speedtest_download
+      name: Down
+      color: red
+    - entity: sensor.speedtest_upload
+      name: Up
+      color: green
+
+- type: entities
+  title: Hue Battery Levels
+  entities:
+    - entity: sensor.chrissy_s_bedlight_battery_level
+      type: custom:bar-card
+      entity_row: true
+    - entity: sensor.chrissy_s_switch_battery_level
+      type: custom:bar-card
+      entity_row: true
+    - entity: sensor.corridor_switch_battery_level
+      type: custom:bar-card
+      entity_row: true
+    - entity: sensor.isabelle_s_room_switch_battery_level
+      type: custom:bar-card
+      entity_row: true
+    - entity: sensor.living_room_switch_battery_level
+      type: custom:bar-card
+      entity_row: true
+    - entity: sensor.master_bedroom_switch_battery_level
+      type: custom:bar-card
+      entity_row: true
+    - entity: sensor.study_battery_level
+      type: custom:bar-card
+      entity_row: true
+  severity:
+    - color: '#009900'
+      from: 0
+      to: 33
+    - color: '#FFB732'
+      from: 34
+      to: 50
+    - color: '#e67e00'
+      from: 51
+      to: 80
+    - color: '#d11919'
+      from: 81
+      to: 100
+      
